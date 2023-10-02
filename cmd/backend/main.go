@@ -18,9 +18,11 @@ func main() {
 		return c.SendString(time.Now().Format(time.RFC3339))
 	})
 
-	lo.Must0(app.ListenTLS(
-		"0.0.0.0:8080",
-		"../../../local/htmx/cert/conf/live/htmx.space/fullchain.pem",
-		"../../../local/htmx/cert/conf/live/htmx.space/privkey.pem",
-	))
+	lo.Must0(app.Listen("0.0.0.0:8080"))
+
+	// lo.Must0(app.ListenTLS(
+	// 	"0.0.0.0:8080",
+	// 	"../../../local/htmx/cert/conf/live/htmx.space/fullchain.pem",
+	// 	"../../../local/htmx/cert/conf/live/htmx.space/privkey.pem",
+	// ))
 }
