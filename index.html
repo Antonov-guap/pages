@@ -2,10 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>TDS</title>
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            background: url("https://i.pinimg.com/originals/e1/61/7a/e1617a3f08ea7aacbf158288137d9ffd.jpg");
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  /* Устанавливает высоту рабочего стола на 100% высоты вьюпорта */
+            overflow: hidden;  /* Скрывает прокрутку, если она есть */
+        }
+        #taskbar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to top, #0046a3 0%, #0050a8 50%, #0060bf 100%);
+            border-top: 1px solid #fff;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+        }
+        #start-button {
+            position: absolute;
+            left: 10px;
+            bottom: 5px;
+            width: 70px;
+            height: 30px;
+            background: url("https://itswat.ru/wp-content/uploads/2019/03/Pusk4.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            border-top: 1px solid #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 -1px 0 rgba(0,0,0,0.5);
+        }
+        #window {
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 2px solid #000;
+            border-radius: 8px;  /* Добавляет закругленные углы */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляет тень для эффекта 3D */
+        }
+    </style>
 </head>
 <body>
-<div>Current time:<span hx-trigger="every 300ms" hx-get="time">loading</span></div>
+
+<div id="taskbar">
+    <button id="start-button"></button>
+</div>
+
+<div id="window">TDS Admin</div>
+
 </body>
 </html>
